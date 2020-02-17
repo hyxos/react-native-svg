@@ -2,7 +2,8 @@ import { createElement } from 'react-native-web';
 import { resolve } from './lib/resolve';
 import { Component, Fragment } from 'react';
 import { NumberProp } from './lib/extract/types';
-
+import { SvgXml } from './xml';
+export { SvgXml }
 /**
  * `react-native-svg` supports additional props that aren't defined in the spec.
  * This function replaces them in a spec conforming manner.
@@ -189,12 +190,6 @@ export class Stop extends Component {
 export class Svg extends Component {
   render() {
     return createElement('svg', prepare(this.props));
-  }
-}
-
-export class SvgXml extends Component {
-  render() {
-    return createElement(Fragment, null, prepare(this.props));
   }
 }
 
