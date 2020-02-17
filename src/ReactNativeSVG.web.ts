@@ -190,7 +190,7 @@ export class Svg extends Component {
 
 export class SvgXml extends Component {
   render() {
-    return createElement(Fragment, null, this.props.children);
+    return createElement(Fragment, null, prepare(this.props));
   }
 }
 
