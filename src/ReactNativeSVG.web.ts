@@ -27,6 +27,7 @@ function prepare(props) {
     fontStyle,
     style,
     forwardedRef,
+    xml,
     ...clean
   } = props;
 
@@ -53,6 +54,10 @@ function prepare(props) {
   }
   if (originX != null || originY != null) {
     transform.push(`translate(${-originX || 0}, ${-originY || 0})`);
+  }
+
+  if (xml != null) {
+    transform.push(`${xml})`);
   }
 
   if (transform.length) {
