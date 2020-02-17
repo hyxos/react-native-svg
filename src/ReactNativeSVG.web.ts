@@ -1,4 +1,5 @@
 import { createElement } from 'react-native-web';
+import { Fragment } from 'react'
 import { resolve } from './lib/resolve';
 import { Component } from 'react';
 import { NumberProp } from './lib/extract/types';
@@ -184,6 +185,12 @@ export class Stop extends Component {
 export class Svg extends Component {
   render() {
     return createElement('svg', prepare(this.props));
+  }
+}
+
+export class SvgXml extends Component {
+  render() {
+    return createElement(Fragment, prepare(this.props));
   }
 }
 
