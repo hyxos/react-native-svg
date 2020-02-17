@@ -1,7 +1,6 @@
 import { createElement } from 'react-native-web';
-import { Fragment } from 'react'
 import { resolve } from './lib/resolve';
-import { Component } from 'react';
+import { Component, Fragment } from 'react';
 import { NumberProp } from './lib/extract/types';
 
 /**
@@ -27,9 +26,14 @@ function prepare(props) {
     fontStyle,
     style,
     forwardedRef,
+    xml,
     ...clean
   } = props;
 
+  if (xml != null) {
+    return xml
+  } 
+  
   const transform = [];
 
   if (originX != null || originY != null) {
